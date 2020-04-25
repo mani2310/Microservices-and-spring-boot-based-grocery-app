@@ -1,0 +1,19 @@
+--Run below commands to create various containers for various services
+docker run -p 27017:27017 --name cartmongodb -d mongo
+docker run -p 27027:27017 --name usermongodb -d mongo
+docker run -p3316:3306 --name orderschema -e MYSQL_ROOT_PASSWORD=root -d mysql
+docker run -p3326:3306 --name itemschema -e MYSQL_ROOT_PASSWORD=root -d mysql
+ 
+
+--for getting inside a docker container use below command ,
+docker exec -it <container_name> /bin/bash
+--eg:
+docker exec -it usermongodb /bin/bash
+>>>><<<<<open mongli cli using image name>>>>>><<<<<
+
+--for getting inside mysql cli , run the below command
+mysql -uroot -p
+
+--To find on which ip your docker machine is running in your local run below command
+docker-machine ip default
+192.168.99.100
